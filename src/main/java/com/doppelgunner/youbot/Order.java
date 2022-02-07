@@ -3,7 +3,7 @@ package com.doppelgunner.youbot;
 import java.util.EnumSet;
 
 /**
- * Created by robertoguazon on 16/07/2017.
+ * Created by protectionserver.com.
  */
 public enum Order {
 

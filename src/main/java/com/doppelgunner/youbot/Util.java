@@ -10,7 +10,6 @@ import com.google.api.services.oauth2.Oauth2;
 import com.google.api.services.oauth2.model.Userinfoplus;
 import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.model.*;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
@@ -30,29 +29,25 @@ import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
 import java.awt.*;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
 /**
- * Created by robertoguazon on 13/07/2017.
+ * Created by protectionserver.com.
  */
 public class Util {
 
     public static final String PROPERTIES_FILENAME = "youtube.properties";
-    public static final String APPLICATION_NAME = "You_Bot";
+    public static final String APPLICATION_NAME = "You_Web_Bot";
 
-    //https://stackoverflow.com/questions/24239332/google-oauth-handle-a-revoked-authorization
-    //https://developers.google.com/identity/protocols/OAuth2UserAgent#validatetoken
     public static void revokeAccess(String accessToken) {
 
         try {
@@ -160,12 +155,6 @@ public class Util {
         }
     }
 
-    /**
-     * Use this with {@link #getYouTubeAuthentication()} for higher quota
-     * @param query
-     * @param maxResults
-     * @return
-     */
     public static List<Video> getYouTubeVideos(YouTube youtube, String query, String order, Long maxResults) {
         try {
             List<SearchResult> results = searchYouTubeVideos(youtube, query, order, maxResults);
@@ -254,13 +243,6 @@ public class Util {
         tray.showAndDismiss(Duration.seconds(2));
     }
 
-    /**
-     * Need the youtube w/ authentication ({@link #getYouTubeAuthentication()} for commenting on youtube videos. Also,
-     *  this uses the scopes needed
-     * @param youTubeAuthentication
-     * @param videoId
-     * @param comment
-     */
     public static void comment(YouTube youTubeAuthentication, String videoId, String comment) throws IOException {
         CommentSnippet commentSnippet = new CommentSnippet();
         commentSnippet.setTextOriginal(comment);
@@ -323,10 +305,10 @@ public class Util {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save video list");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("YouBot Video List","*.youbot.json")
+                new FileChooser.ExtensionFilter("YouWebBot Video List","*.youbot.json")
         );
         fileChooser.setInitialDirectory(new File("data/save"));
-        File file = fileChooser.showSaveDialog(YouBot.getPrimaryStage());
+        File file = fileChooser.showSaveDialog(YouWebBot.getPrimaryStage());
         save(list.toArray(),file.getName());
     }
 
@@ -334,10 +316,10 @@ public class Util {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose saved video list");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("YouBot Video List","*.youbot.json")
+                new FileChooser.ExtensionFilter("YouWebBot Video List","*.youbot.json")
         );
         fileChooser.setInitialDirectory(new File("data/save"));
-        File file = fileChooser.showOpenDialog(YouBot.getPrimaryStage());
+        File file = fileChooser.showOpenDialog(YouWebBot.getPrimaryStage());
         if (file != null) {
             return load(file.getPath());
         }
@@ -380,7 +362,7 @@ public class Util {
                 new FileChooser.ExtensionFilter("YouBot Comment","*.youbot.comment.json")
         );
         fileChooser.setInitialDirectory(new File("data/save/comment"));
-        File file = fileChooser.showSaveDialog(YouBot.getPrimaryStage());
+        File file = fileChooser.showSaveDialog(YouWebBot.getPrimaryStage());
         toJSON(comment,"data/save/comment/" + file.getName());
     }
 
@@ -391,7 +373,7 @@ public class Util {
                 new FileChooser.ExtensionFilter("YouBot Comment","*.youbot.comment.json")
         );
         fileChooser.setInitialDirectory(new File("data/save/comment"));
-        File file = fileChooser.showOpenDialog(YouBot.getPrimaryStage());
+        File file = fileChooser.showOpenDialog(YouWebBot.getPrimaryStage());
         if (file != null) {
             return fromJSON(String.class,file.getPath());
         }

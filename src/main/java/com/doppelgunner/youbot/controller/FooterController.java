@@ -7,7 +7,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.image.ImageView;
 
 /**
- * Created by robertoguazon on 19/07/2017.
+ * Created by protectionserver.com.
  */
 public class FooterController extends Controller {
 

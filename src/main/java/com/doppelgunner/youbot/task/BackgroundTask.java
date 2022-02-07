@@ -3,11 +3,11 @@ package com.doppelgunner.youbot.task;
 import javafx.concurrent.Task;
 
 /**
- * Created by robertoguazon on 17/07/2017.
+ * Created by protectionserver.com.
  */
 public class BackgroundTask extends Task<Void>  {
 
-    private Runnable runnable;
+    private final Runnable runnable;
 
     public BackgroundTask(Runnable runnable) {
         this.runnable = runnable;

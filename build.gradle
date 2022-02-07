@@ -3,19 +3,20 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    compile 'com.google.api-client:google-api-client:1.22.0'
-    compile 'com.google.oauth-client:google-oauth-client-jetty:1.20.0'
-    compile 'com.google.apis:google-api-services-youtube:v3-rev182-1.22.0'
-    compile 'org.apache.httpcomponents:httpclient:4.5.3'
+    testImplementation group: 'junit', name: 'junit', version: '4.11'
+    implementation 'com.google.api-client:google-api-client:1.22.0'
+    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.20.0'
+    implementation 'com.google.apis:google-api-services-youtube:v3-rev182-1.22.0'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.3'
     //compile 'com.google.apis:google-api-services-plus:v1-rev527-1.22.0'
-    compile 'com.google.apis:google-api-services-oauth2:v2-rev75-1.19.0'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.9'
+    implementation 'com.google.apis:google-api-services-oauth2:v2-rev75-1.19.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.8.9'
 }
+targetCompatibility = JavaVersion.VERSION_1_8

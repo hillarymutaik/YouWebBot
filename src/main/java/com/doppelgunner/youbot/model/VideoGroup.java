@@ -17,7 +17,7 @@ import javafx.scene.layout.VBox;
 import java.io.Serializable;
 
 /**
- * Created by robertoguazon on 16/07/2017.
+ * Created by protectionserver.com.
  */
 public class VideoGroup {
 

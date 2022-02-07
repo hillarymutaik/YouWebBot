@@ -1,24 +1,19 @@
 package com.doppelgunner.youbot.controller;
 
 import com.doppelgunner.youbot.Util;
-import com.doppelgunner.youbot.YouBot;
+import com.doppelgunner.youbot.YouWebBot;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-import java.awt.*;
-import java.net.URI;
-
 /**
- * Created by robertoguazon on 15/07/2017.
+ * Created by protectionserver.com.
  */
 public class HeaderController extends Controller {
 
@@ -37,10 +32,10 @@ public class HeaderController extends Controller {
         Circle clip = new Circle(32,32,32);
         dpImageView.setClip(clip);
 
-        if (YouBot.isLoggedIn()) {
-            setDP(YouBot.getImage());
+        if (YouWebBot.isLoggedIn()) {
+            setDP(YouWebBot.getImage());
         } else {
-            setDP(YouBot.getDefaultImage());
+            setDP(YouWebBot.getDefaultImage());
         }
 
         login = new ImageView("images/login.png");
@@ -74,25 +69,25 @@ public class HeaderController extends Controller {
     @FXML
     public void log() {
         logButton.setDisable(true);
-        if (!YouBot.isLoggedIn()) {
+        if (!YouWebBot.isLoggedIn()) {
             Util.runBackground(
-                    () -> YouBot.login(),
+                    YouWebBot::login,
                     () -> {
-                        if (YouBot.isLoggedIn()) {
+                        if (YouWebBot.isLoggedIn()) {
                             logButton.setGraphic(logout);
                             loginTooltip.setText("Logout");
-                            setDP(YouBot.getImage());
-                            setUsername(YouBot.getUsername());
+                            setDP(YouWebBot.getImage());
+                            setUsername(YouWebBot.getUsername());
                         }
                     }, true);
 
         } else {
             Util.runBackground(
-                    () -> YouBot.logout(),
+                    YouWebBot::logout,
                     () -> {
                         logButton.setGraphic(login);
                         loginTooltip.setText("Login");
-                        setDP(YouBot.getDefaultImage());
+                        setDP(YouWebBot.getDefaultImage());
                         setUsername("guest");
                         logButton.setDisable(false);
                     }

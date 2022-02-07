@@ -2,11 +2,9 @@ package com.doppelgunner.youbot.controller;
 
 import com.doppelgunner.youbot.Order;
 import com.doppelgunner.youbot.Util;
-import com.doppelgunner.youbot.YouBot;
+import com.doppelgunner.youbot.YouWebBot;
 import com.doppelgunner.youbot.model.VideoGroup;
 import com.google.api.services.youtube.model.SearchResult;
-import com.google.api.services.youtube.model.Video;
-import com.sun.xml.internal.ws.client.sei.ResponseBuilder;
 import javafx.application.Platform;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -14,7 +12,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
@@ -30,7 +27,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Created by robertoguazon on 15/07/2017.
+ * Created by protectionserver.com.
  */
 public class MainController extends Controller {
 
@@ -82,9 +79,9 @@ public class MainController extends Controller {
         commentTextArea.setWrapText(true);
 
         //disableApp(true);
-        //YouBot.getLoggedInProperty().addListener((o,ov,nv) -> disableApp(!nv));
+        //YouWebBot.getLoggedInProperty().addListener((o,ov,nv) -> disableApp(!nv));
         disableComment(true);
-        YouBot.getLoggedInProperty().addListener((o,ov,nv) -> disableComment(!nv));
+        YouWebBot.getLoggedInProperty().addListener((o, ov, nv) -> disableComment(!nv));
 
         ObservableList<String> orders = FXCollections.observableArrayList();
         for (Order order : Order.all) {
@@ -256,7 +253,7 @@ public class MainController extends Controller {
     private void search() {
         String queryString = Util.getYoutubeID(searchTextField.getText());
         if (queryString == null || queryString.isEmpty()) {
-            Util.notify("YouBot", "Search: Fill up the text field", NotificationType.NOTICE);
+            Util.notify("YouWebBot", "Search: Fill up the text field", NotificationType.NOTICE);
             return;
         }
         String orderString = orderyByComboBox.getSelectionModel().getSelectedItem();
@@ -290,7 +287,7 @@ public class MainController extends Controller {
                 },
                 () -> {
                     searchButton.setDisable(false);
-                    Util.notify("YouBot", "Search: Failed no internet connection", NotificationType.NOTICE);
+                    Util.notify("YouWebBot", "Search: Failed no internet connection", NotificationType.NOTICE);
                 },
                 true
         );
@@ -359,7 +356,7 @@ public class MainController extends Controller {
     @FXML
     private void saveSelected() {
         if (selectedList.size() <=0) {
-            Util.notify("YouBot","Nothing to save", NotificationType.NOTICE);
+            Util.notify("YouWebBot","Nothing to save", NotificationType.NOTICE);
             return;
         }
         Util.saveList(selectedList);
@@ -378,15 +375,15 @@ public class MainController extends Controller {
     private void sendComment() {
         String comment = commentTextArea.getText();
         if (comment == null || comment.isEmpty()) {
-            Util.notify("YouBot", "Can't send an empty comment", NotificationType.NOTICE);
+            Util.notify("YouWebBot", "Can't send an empty comment", NotificationType.NOTICE);
             return;
         }
         if (selectedList.isEmpty()) {
-            Util.notify("YouBot", "Choose videos to comment on", NotificationType.NOTICE);
+            Util.notify("YouWebBot", "Choose videos to comment on", NotificationType.NOTICE);
             return;
         }
         if (!Util.hasInternet()) {
-            Util.notify("YouBot", "Problem sending comment, check Internet connection", NotificationType.NOTICE);
+            Util.notify("YouWebBot", "Problem sending comment, check Internet connection", NotificationType.NOTICE);
         } else {
             sendCommentButton.setDisable(true);
             Util.runBackground(
@@ -395,7 +392,7 @@ public class MainController extends Controller {
                         int disabledComments = 0;
                         for (int i = 0; i < selectedList.size(); i++) {
                             try {
-                                Util.comment(YouBot.getYoutubeAuth(),selectedList.get(i).getVideoId(),comment);
+                                Util.comment(YouWebBot.getYoutubeAuth(),selectedList.get(i).getVideoId(),comment);
                             } catch (IOException e) {
                                 toDelete.add(selectedList.get(i));
                                 disabledComments++;
@@ -405,7 +402,7 @@ public class MainController extends Controller {
                         if (disabledComments > 0) {
                             final int dc = disabledComments;
                             Platform.runLater(() ->
-                                    Util.notify("YouBot","Deleting " + dc + " video/s that have comments disabled.",NotificationType.NOTICE));
+                                    Util.notify("YouWebBot","Deleting " + dc + " video/s that have comments disabled.",NotificationType.NOTICE));
                         }
 
                         Platform.runLater(() -> {
@@ -429,7 +426,7 @@ public class MainController extends Controller {
     private void saveComment() {
         String comment = commentTextArea.getText();
         if (comment == null || comment.isEmpty()) {
-            Util.notify("YouBot", "Can't save an empty comment", NotificationType.NOTICE);
+            Util.notify("YouWebBot", "Can't save an empty comment", NotificationType.NOTICE);
             return;
         }
         Util.saveComment(comment);

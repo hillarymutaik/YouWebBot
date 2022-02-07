@@ -1,6 +1,6 @@
 package com.doppelgunner.youbot.controller;
 
-import com.doppelgunner.youbot.YouBot;
+import com.doppelgunner.youbot.YouWebBot;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,7 +10,7 @@ import javafx.scene.web.WebView;
 import java.io.IOException;
 
 /**
- * Created by robertoguazon on 19/07/2017.
+ * Created by protectionserver.com.
  */
 public class LoginWebController extends Controller {
 
@@ -58,7 +58,7 @@ public class LoginWebController extends Controller {
         try {
             lsr.stop();
 
-            MainController main = (MainController)YouBot.getMainController();
+            MainController main = (MainController) YouWebBot.getMainController();
             HeaderController header = (HeaderController) main.getHeaderController();
             header.getLogButton().setDisable(false);
         } catch (IOException e) {

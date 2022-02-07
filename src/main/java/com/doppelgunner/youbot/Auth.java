@@ -5,7 +5,6 @@ import com.google.api.client.auth.oauth2.AuthorizationCodeRequestUrl;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.auth.oauth2.StoredCredential;
 import com.google.api.client.auth.oauth2.TokenResponse;
-import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
@@ -16,22 +15,16 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.DataStore;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import javafx.application.Platform;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.net.URI;
 import java.util.List;
+import java.util.Objects;
 
-/**
- * Shared class used by every sample. Contains methods for authorizing a user and caching credentials.
- */
+
 public class Auth {
 
     public static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
@@ -49,7 +42,7 @@ public class Auth {
         this.credentialDataStore = credentialDataStore;
 
         // Load client secrets.
-        Reader clientSecretReader = new InputStreamReader(Auth.class.getResourceAsStream("/client_secrets.json"));
+        Reader clientSecretReader = new InputStreamReader(Objects.requireNonNull(Auth.class.getResourceAsStream("/client_secrets.json")));
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, clientSecretReader);
 
         // This creates the credentials datastore at ~/.oauth-credentials/${credentialDatastore}
@@ -75,8 +68,8 @@ public class Auth {
 
             //create stage for log in then open url
             Platform.runLater(() -> {
-                Stage loginStage = YouBot.getLoginStage();
-                LoginWebController loginWebController = (LoginWebController)YouBot.getLoginWebController();
+                Stage loginStage = YouWebBot.getLoginStage();
+                LoginWebController loginWebController = (LoginWebController) YouWebBot.getLoginWebController();
                 loginWebController.setLocalReceiver(localReceiver);
                 loginWebController.openURL(url);
                 loginStage.show();
@@ -85,7 +78,7 @@ public class Auth {
 
             String code = localReceiver.waitForCode();
             Platform.runLater(() -> {
-                YouBot.getLoginStage().close();
+                YouWebBot.getLoginStage().close();
             });
             TokenResponse response = flow.newTokenRequest(code).setRedirectUri(redirectUri).execute();
             credential = flow.createAndStoreCredential(response,"user");
