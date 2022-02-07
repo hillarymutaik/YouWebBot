@@ -5,61 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f898f414-52a1-460e-9548-1a7fa8ffc414" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/YouBot.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_8_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_databind_2_8_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_api_client_google_api_client_1_22_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_apis_google_api_services_oauth2_v2_rev75_1_19_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_apis_google_api_services_youtube_v3_rev182_1_22_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_1_3_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_guava_jdk5_17_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_http_client_google_http_client_1_22_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_http_client_google_http_client_jackson2_1_22_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_oauth_client_google_oauth_client_1_22_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_oauth_client_google_oauth_client_java6_1_20_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_oauth_client_google_oauth_client_jetty_1_20_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_codec_commons_codec_1_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_httpcomponents_httpclient_4_5_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_httpcomponents_httpcore_4_4_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mortbay_jetty_jetty_6_1_26.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mortbay_jetty_jetty_util_6_1_26.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mortbay_jetty_servlet_api_2_5_20081211.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/TrayNotification.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/TrayNotification1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/YouBot.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/save/comment/youbot-sample-test.youbot.comment.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/save/comment/youbot-sample-test.youbot.comment.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/Auth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/YouBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/YouWebBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/controller/FooterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/controller/FooterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/controller/HeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/controller/HeaderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/controller/LoginWebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/controller/LoginWebController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/model/VideoGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/model/VideoGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/task/BackgroundTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doppelgunner/youbot/task/BackgroundTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/YouBot_TestA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/YouWebBot_TestA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/YouBot_TestB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/YouWebBot_TestB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,15 +31,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PATH_TO_FX$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RunManager">
     <configuration name="YouWebBot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.doppelgunner.youbot.YouWebBot" />
       <module name="YouWebBot.main" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.fxml,javafx.controls,javafx.graphics" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.doppelgunner.youbot.*" />
@@ -119,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1644258894669</updated>
       <workItem from="1644258899526" duration="902000" />
-      <workItem from="1644259899169" duration="1695000" />
+      <workItem from="1644259899169" duration="3200000" />
     </task>
     <servers />
   </component>
